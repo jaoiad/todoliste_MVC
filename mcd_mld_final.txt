@@ -1,0 +1,57 @@
+
+<mcd>
+
+	<entités>
+		tache
+			- id
+			- nom
+			- datetime
+			- memo
+			- archiv
+			
+			categorie
+			- id
+			- label	
+		
+		utilisateur
+			- id
+			- nom
+			- login
+			- passw	
+
+		</entités>
+		
+		<association>
+		
+		categoriser:
+			- tache (1,1)
+			- categorie (0,N)
+
+		acceder :
+			- tache (1,1)
+			- utilisateur (0,N)
+			
+			
+	</association
+</mcd>
+
+<MLD>
+tache
+	- tac_id (int ai not null)
+	- tac_label varchar(50)
+	- tac_datetime datetime
+	- tac_memo	varchar(255)
+	- tac_archiv	int(boolean?)
+	- tac_categorie (FK) int
+	- tac_utilisateur (FK) int
+			
+categorie
+	- cat_id int ai not null
+	- cat_label varchar(50) not null
+
+utilisateur
+	- ut_id int ai not null
+	- ut_nom varchar(50) not null
+	- ut_username varchar(50) not null
+	- ut_passw varchar (50) not null
+</MLD>
